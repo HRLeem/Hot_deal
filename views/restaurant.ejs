@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+		<title>홈 화면</title>
+		
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+		
+		<style>
+			body { padding-top:80px; }
+			
+			@font-face {
+				font-family: 'Nanum Gothic'; font-style: normal; font-weight: 400;
+				src: url('../public/NanumGothic-Regular.eot');
+				src: local('NanumGothic'),
+					url('../public/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+					url('../public/NanumGothic-Regular.woff2') format('woff2'),
+					url('../public/NanumGothic-Regular.woff') format('woff'),
+					url('../public/NanumGothic-Regular.ttf') format('truetype');
+			}
+			
+			h1, p, a { font-family: 'Nanum Gothic' }
+
+			#sibal { font-size: 24px;}
+
+			a {font-size:15px;}
+			a:link{color:black; text-decoration : none;}
+			a:visited{color:black; text-decoration : none;}
+			a:hover{color:coral;}
+
+			table {
+				margin-top: 60px;
+				margin-left: 60px;
+			}
+			
+			th {
+				border-bottom: 3px solid #ebebeb;
+				padding: 15px 0 5px 25px;
+			}
+			td {
+				border-bottom: 1px solid #ebebeb;
+				width: 300px;
+				font-size:15px;
+				text-align:left;
+				padding: 10px 0 10px 25px;
+				
+			}
+
+			
+		</style>
+	
+	</head>
+	<body>
+		<div class="container">
+		    <div class="jumbotron text-center" style="background-color: white; border:1px solid #ebebeb;">
+		        <h4>정보공개서</h4>
+				<br>
+				
+
+				<table>
+					<thead>외식업</thead>
+					<tr>
+						<th>상호명</td>
+						<th>영업표지</td>
+						<th>업종</td>
+					</tr>
+					<% for(var i=0;i<15;i++) { %>
+						<tr>
+							<td><a href="http://www.hi-franchise.com/sub/brand1_view.php?brand_cd=<%=href[i] %>&?category=10&sch_input=&total_amt=&fran_cnt="><%=company[i] %></a></td>
+							<td><a href="http://www.hi-franchise.com/sub/brand1_view.php?brand_cd=<%=href[i] %>&?category=10&sch_input=&total_amt=&fran_cnt="><%=store[i] %></a></td>
+							<td><%=sort[i] %></td>
+						</tr>
+					<% } %>
+				</table>
+
+		
+
+				
+		    </div>
+		
+		</div>
+	</body>
+</html>

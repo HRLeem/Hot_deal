@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		
+		<title>홈 화면</title>
+		
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+		
+		<style>
+			body { padding-top:80px; }
+			
+			@font-face {
+				font-family: 'Nanum Gothic'; font-style: normal; font-weight: 400;
+				src: url('../public/NanumGothic-Regular.eot');
+				src: local('NanumGothic'),
+					url('../public/NanumGothic-Regular.eot?#iefix') format('embedded-opentype'),
+					url('../public/NanumGothic-Regular.woff2') format('woff2'),
+					url('../public/NanumGothic-Regular.woff') format('woff'),
+					url('../public/NanumGothic-Regular.ttf') format('truetype');
+			}
+			
+			h1, p, a { font-family: 'Nanum Gothic' }
+
+			#sibal { font-size: 24px;}
+
+			a {font-size:18px;}
+			a:link{color:black; text-decoration : none;}
+			a:visited{color:black; text-decoration : none;}
+			a:hover{color:coral;}
+
+
+		</style>
+	
+	</head>
+	<body>
+		<div class="container">
+		    <div class="jumbotron text-center">
+		        <h4>정보공개서</h4>
+				<br>
+				<% for (var i=1;i<11;i++) { %>
+					<a href="https://franchise.ftc.go.kr<%=href[i-1] %>"> 
+					<span id = "sibal"><%= i %> - </span><%=company[i-1] %> --- <%=store[i-1] %> 
+				</a><br>
+				<% } %>
+		
+
+
+				<!--
+				<form id="form2" method="get" action="/api/show_news">
+					<button type="submit" value="go">ㅋ</button type="submit">
+				</form>
+				-->
+
+				
+		    </div>
+		
+		</div>
+	</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        -->
+		<title>홈 화면</title>
+		
+        <link rel="stylesheet" href="../public/css/common.css">	
+        <style>
+            #em, #sm {
+                padding:1px;
+                font-size:12px;
+                font-weight: bold;
+                border-radius: 2px;
+            }
+            #em {
+                color:black;
+                background-color:rgb(251, 209, 92)
+            }
+            #sm {
+                color:white;
+                background-color:orangered;
+            }
+            div.big {
+                display:inline-block;
+                position:relative;
+                vertical-align: top;
+                margin:20px;
+            }
+            #font_normal {
+                font-size: 13px;
+            }
+            #price {
+                font-size:15px;
+                font-weight:600;
+            }
+            span#prd_title {
+                font-size: 14px;
+            }
+            div#for_you {
+                text-overflow:ellipsis;
+                overflow:hidden;
+                width:320px;
+            }
+            p#for_you {
+                vertical-align: bottom;
+            }
+            img#prd {
+                width: 320px; /*480*/
+                height: 166.666px; /*250*/
+            }
+            img#ssg {
+                width: 240px; /*360*/
+                height: 240px;
+            }
+            #price1 {
+                font-size: 10px;
+                text-decoration: line-through;
+                color : lightslategray;
+            }
+            #price0 {
+                font-size: 10px;
+                color: lightslategray;
+                font-weight: 500;
+            }
+        </style>
+	</head>
+	<body>
+		<div id = "header">
+            <h1>
+                duth
+                <span id="update_time">
+                    업데이트: <%=today[0] %>년 <%=today[1] %>월 <%=today[2] %>일
+                </span>
+            </h1>
+        </div>
+
+        <div class="container">         
+            <div id = "container">
+                <div class="big">
+                <% for ( var i=0; i<3; i++) { %>
+                    <div class="a11th<%=i%>">
+                    <img src="<%=a11th[i]%>" id="prd">
+                    <p>
+                        <span id="prd_title"><%=a11th_name[i]%> <br> </span>
+                        <span id="font_normal">
+                            <span style="color:crimson;font-weight:bold"><%=a11th_sale[i]%></span>
+                            <span id ="price"><%=a11th_price[i]%>원</span>
+                            <span id="price1%>">
+                                <%=a11th_price_add[i]%>
+                                </span>
+                            </span>
+                    </p>
+                    
+                    </div>
+                <% } %>
+             </div>
+             <div class="big">
+                <% for ( var i=0; i<3; i++) { %>
+                    <div class="auction<%=i%>">
+                    <img src="<%=auction[i]%>" id="prd">
+                    <p>
+                        <span id="prd_title"><%=auction_name[i]%> <br> </span>
+                        <span id="font_normal">
+                        <span style="color:crimson;font-weight:bold"><%=auction_sale[i]%></span>
+                        <span id ="price"><%=auction_price[i]%></span>
+                            <span id="price<%=auction_price_add_01[i]%>">
+                            <%=auction_price_add[i]%>
+                            </span>
+                        </span>
+                    </p>
+                    </div>
+                <% } %>
+            </div>
+            <div class="big">
+                <% for ( var i=0; i<3; i++) { %>
+                    <div class="ssg<%=i%>">
+                    <img src="<%=ssg[i]%>" id="ssg">
+                    <p>
+                        <div id="for_you">
+                        <span id="prd_title"><%=ssg_name[i]%> <br> </span>
+                    </div>
+
+
+                        <span id="<%=ssg_price_add_es[i]%>"><%=ssg_price_add[i]%></span>
+                        <span id="font_normal">
+                            <span id ="price"><%=ssg_price[i]%>원</span>
+                        </span>
+                    </p>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+
+    
+            
+        </div>
+        
+        
+        
+        <footer>
+            Copyright © GHR Corp. All rights reserved.
+        </footer>
+    </body>
+</html>

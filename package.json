@@ -1,0 +1,31 @@
+{
+  "name": "BoardExample",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cheerio": "^1.0.0-rc.3",
+    "cheerio-eq": "^1.0.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.2",
+    "errorhandler": "^1.4.3",
+    "express": "^4.14.0",
+    "express-error-handler": "^1.1.0",
+    "express-session": "^1.14.2",
+    "fs": "0.0.1-security",
+    "html-entities": "^1.2.0",
+    "iconv": "^2.3.5",
+    "mongoose": "^4.6.6",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "request": "^2.88.0",
+    "serve-static": "^1.11.2"
+  }
+}
