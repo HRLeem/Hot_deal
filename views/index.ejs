@@ -1,39 +1,209 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../public/css/uikit.min.css" />
-        <script src="../public/js/uikit.min.js"></script>
-        <script src="../public/js/uikit-icons.min.js"></script>
-        <link rel="stylesheet" href="../public/css/index.css">
-	<body>
-        <header></header>
-        <section>
-            <div class='wrap'>
-                <div class='.uk-column-1-3'>
-                    <img src="<%=a11th[1]%>">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+        -->
+    <title>홈 화면</title>
+
+    <link rel="stylesheet" href="../public/css/common.css">
+    <style>
+        #em,
+        #sm {
+            padding: 1px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+
+        #em {
+            color: black;
+            background-color: rgb(251, 209, 92)
+        }
+
+        #sm {
+            color: white;
+            background-color: orangered;
+        }
+
+        #logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        div.big {
+            /*
+                display:inline-block;
+                position:relative;
+                vertical-align: top;
+                margin:20px;
+                */
+            display: inline-flex;
+            flex-direction: column;
+            vertical-align: top;
+
+            margin: 0px 30px;
+            padding: 10px;
+            padding-top: 0px;
+            width: 360px;
+            border: 1px solid ghostwhite;
+        }
+
+        div.small {
+            /* border: 1px solid blanchedalmond; */
+            margin: 10px 0px;
+            padding: 10px;
+            height: 266px;
+        }
+
+        #font_normal {
+            font-size: 13px;
+        }
+
+        #price {
+            font-size: 23px;
+            font-weight: 600;
+        }
+
+        span#prd_title {
+            font-size: 14px;
+        }
+
+        div#for_you {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 320px;
+        }
+
+        p#for_you {
+            vertical-align: bottom;
+        }
+
+        img {
+            display: block;
+            margin: 0px auto;
+        }
+
+        img#prd {
+            width: 320px;
+            /*480*/
+            height: 166.666px;
+            /*250*/
+        }
+
+        img#ssg {
+            width: 166.666px;
+            /*360*/
+            height: 166.666px;
+        }
+
+        #price_sale {
+            color: crimson;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+        #price1 {
+            font-size: 10px;
+            text-decoration: line-through;
+            color: lightslategray;
+        }
+
+        #price0 {
+            font-size: 10px;
+            color: lightslategray;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>
+            duth
+            <span id="update_time">
+                업데이트: <%=today[0] %>년 <%=today[1] %>월 <%=today[2] %>일
+            </span>
+        </h1>
+    </div>
+
+    <div class="container">
+        <div id="container">
+            <div class="big">
+                <img id="logo" src="https://static-s.aa-cdn.net/img/ios/397938216/40e5d611cfdc8f9c299e3ef28fa709be"
+                    alt="11번가">
+                <% for ( var i=0; i<3; i++) { %>
+                <div class="small a11th<%=i%>">
+                    <img src="<%=a11th[i]%>" id="prd">
                     <p>
-                        <span></span> <br>
-                        
+                        <span id="prd_title"><%=a11th_name[i]%> <br> </span>
+                        <span id="font_normal">
+                            <span id="price_sale"><%=a11th_sale[i]%></span>
+                            <span id="price"><%=a11th_price[i]%>원</span>
+                            <span id="price1%>">
+                                <%=a11th_price_add[i]%>
+                            </span>
+                        </span>
+                    </p>
+
+                </div>
+                <% } %>
+            </div>
+            <div class="big">
+                <img id="logo"
+                    src="https://yt3.ggpht.com/a/AGF-l7_kmJrGWdE2Ak0G9-gggFbbTGKP_QilbbDapg=s900-c-k-c0xffffffff-no-rj-mo"
+                    alt="옥션">
+                <% for ( var i=0; i<3; i++) { %>
+                <div class="small auction<%=i%>">
+                    <img src="<%=auction[i]%>" id="prd">
+                    <p>
+                        <span id="prd_title"><%=auction_name[i]%> <br> </span>
+                        <span id="font_normal">
+                            <span id="price_sale"><%=auction_sale[i]%></span>
+                            <span id="price"><%=auction_price[i]%></span>
+                            <span id="price<%=auction_price_add_01[i]%>">
+                                <%=auction_price_add[i]%>
+                            </span>
+                        </span>
                     </p>
                 </div>
-
-                <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-                    <div class="uk-card-media-left uk-cover-container">
-                        <img src="<%=a11th[1]%>" alt="11번가 상품이미지" uk-cover>
-                        <canvas width="600" height="400"></canvas>
-                    </div>
-                    <div>
-                        <div class="uk-card-body">
-                            <h3 class="uk-card-title, uk-h5"><%=a11th_name[1]%></h3>
-                            <p><%=a11th_price[1]%></p>
-                        </div>
-                    </div>
-                </div>
-
-
+                <% } %>
             </div>
-        </section>
-    </body>
+            <div class="big">
+                <img id="logo"
+                    src="https://lh4.googleusercontent.com/proxy/qvigw2GgwviygOTjCU0FDxMr2FdGIg6VzGjKwIcD_dyyCe6isJmpJLMhUIkv4C5uE1he3zXLGJwWWQcuet9TMgQ"
+                    alt="ssg">
+                <% for ( var i=0; i<3; i++) { %>
+                <div class="small ssg<%=i%>">
+                    <img src="<%=ssg[i]%>" id="ssg">
+                    <p>
+                        <div id="for_you">
+                            <span id="prd_title"><%=ssg_name[i]%> <br> </span>
+                        </div>
+
+
+                        <span id="<%=ssg_price_add_es[i]%>"><%=ssg_price_add[i]%></span>
+                        <span id="font_normal">
+                            <span id="price"><%=ssg_price[i]%>원</span>
+                        </span>
+                    </p>
+                </div>
+                <% } %>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <footer>
+        <p>
+            Copyright © GHR Corp. All rights reserved.
+        </p>
+    </footer>
+</body>
+
 </html>
